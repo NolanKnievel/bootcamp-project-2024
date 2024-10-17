@@ -159,5 +159,18 @@ footer img {
   display: block;    /* Ensure the image is treated as a block element for centering */
   margin-left: auto; /* Centers the image horizontally */
   margin-right: auto; /* Centers the image horizontally */
-
 }
+
+#blog-container img {
+  height: 300px;
+}
+
+#blog-container div {
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+
