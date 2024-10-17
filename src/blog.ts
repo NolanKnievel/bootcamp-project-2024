@@ -7,46 +7,54 @@ type Blog = {
   slug: string;
 };
 
+
+// blog content
 const blogs: Blog[] = [
   {
     title: "First Blog!",
     date: "10/16/2024",
     description: "This is my first blog post :)",
-    image: "./images/croppedHeadshot.jpg",
+    image: "../images/IMG_5468.jpg",
     imageAlt: "..",
-    slug: "..",
+    slug: "first-blog",
   },
   {
     title: "Second Blog!",
     date: "10/16/2024",
     description: "This is my second blog post :)",
-    image: "./images/croppedHeadshot.jpg",
+    image: "../images/IMG_7633_2.jpg",
     imageAlt: "..",
-    slug: "..",
+    slug: "second-blog",
   },
 ];
 
-const blogContainer = document.getElementById('blog-container');
+const blogContainer = document.getElementById("blog-container");
 
-blogs.forEach(blog => {
-    const blogEl = document.createElement('div');
 
-    const blogTitle = document.createElement('h1');
-    blogTitle.innerHTML = blog.title;
+// create blog entries on DOM in blogs.html
+blogs.forEach((blog) => {
+  const blogEl = document.createElement("div");
+  blogEl.classList.add("blog-post");
 
-    const blogImg = document.createElement('img');
-    blogImg.src = blog.image;
-    blogImg.alt = blog.imageAlt;
-    
-    const blogDesc = document.createElement('p');
-    blogDesc.innerHTML = blog.description;
+  const blogTitle = document.createElement("h1");
+  const blogLink = document.createElement("a");
+  blogLink.href = "./blogs/".concat(blog.slug, ".html");
+  blogLink.innerHTML = blog.title;
 
-    blogEl.appendChild(blogTitle);
-    blogEl.appendChild(blogImg);
-    blogEl.appendChild(blogDesc);
+  blogTitle.appendChild(blogLink);
 
-    blogContainer?.appendChild(blogEl);
+  const blogImg = document.createElement("img");
+  blogImg.src = blog.image;
+  blogImg.alt = blog.imageAlt;
 
-})
+  const blogDesc = document.createElement("p");
+  blogDesc.innerHTML = blog.description;
+
+  blogEl.appendChild(blogTitle);
+  blogEl.appendChild(blogImg);
+  blogEl.appendChild(blogDesc);
+
+  blogContainer?.appendChild(blogEl);
+});
 
 console.log(blogContainer);
