@@ -33,7 +33,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 main {
@@ -52,15 +51,13 @@ main {
 .business-main {
   background-color: rgb(255, 255, 255);
   display: grid;
-  place-items: center; 
+  place-items: center;
   height: 90vh;
 }
 .home-img {
   filter: grayscale(100%);
   margin-right: 575px;
-  
 }
-
 
 .page-title {
   font-family: "Impact", sans-serif;
@@ -74,10 +71,10 @@ main {
   align-items: center;
 }
 .photo-and-description img {
-  margin: 70px
+  margin: 70px;
 }
 .about-text {
-  margin: 70px
+  margin: 70px;
 }
 
 img {
@@ -122,6 +119,9 @@ img {
   text-decoration: none;
   letter-spacing: 2px;
 }
+.navbar a:hover {
+  text-decoration: underline;
+}
 
 h2 {
   font-size: 50px;
@@ -156,7 +156,7 @@ footer p {
 footer img {
   margin-top: 0px; /* Adds space between the text and image */
   padding-bottom: 10px;
-  display: block;    /* Ensure the image is treated as a block element for centering */
+  display: block; /* Ensure the image is treated as a block element for centering */
   margin-left: auto; /* Centers the image horizontally */
   margin-right: auto; /* Centers the image horizontally */
 }
@@ -172,5 +172,8 @@ footer img {
   margin: 10px;
 }
 
-
-
+.blog-post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgb(216, 97, 37);
+}
