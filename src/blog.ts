@@ -33,9 +33,11 @@ const blogContainer = document.getElementById("blog-container");
 
 // create blog entries on DOM in blogs.html
 blogs.forEach((blog) => {
+  // Create wrapper for each blog post
   const blogEl = document.createElement("div");
   blogEl.classList.add("blog-post");
 
+  // Create elements of a blog post
   const blogTitle = document.createElement("h1");
   const blogLink = document.createElement("a");
   blogLink.href = "./blogs/".concat(blog.slug, ".html");
@@ -50,11 +52,12 @@ blogs.forEach((blog) => {
   const blogDesc = document.createElement("p");
   blogDesc.innerHTML = blog.description;
 
+  // appending children to blog wrapper
   blogEl.appendChild(blogTitle);
   blogEl.appendChild(blogImg);
   blogEl.appendChild(blogDesc);
 
+  // append wrapper to greater blog container
   blogContainer?.appendChild(blogEl);
 });
 
-console.log(blogContainer);

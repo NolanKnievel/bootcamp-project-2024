@@ -140,13 +140,12 @@ p {
   font-size: 20px;
 }
 
-/* CSS for page footer */
 
 footer {
-  text-align: center; /* Centers both text and image */
+  text-align: center;
   padding-bottom: 0px;
-  background-color: #f8f8f8; /* Background color */
-  border-top: 1px solid #ccc; /* Optional top border */
+  background-color: #f8f8f8; 
+  border-top: 1px solid #ccc; 
 }
 
 footer p {
@@ -154,11 +153,11 @@ footer p {
 }
 
 footer img {
-  margin-top: 0px; /* Adds space between the text and image */
+  margin-top: 0px; 
   padding-bottom: 10px;
-  display: block; /* Ensure the image is treated as a block element for centering */
-  margin-left: auto; /* Centers the image horizontally */
-  margin-right: auto; /* Centers the image horizontally */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
 #blog-container img {
