@@ -17,3 +17,22 @@
     border-bottom: 5px double #000;
   }
   
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 30px;
+    list-style: none;
+  }
+  
+  .navbar a {
+    color: rgb(238, 236, 236);
+    font-weight: bold;
+    margin: 0 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
