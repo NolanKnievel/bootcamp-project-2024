@@ -5,16 +5,16 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header className={style.navbar}>
-      <nav className="navbar">
-        <h1 className="logo">
+      <nav className={style.navbar}>
+        <h1 className={style.logo}>
           <a href="index.html">&ltNolanKnievel&gt</a>
         </h1>
-        <ul className="nav-list">
+        <ul className={style.navList}>
           <li>
             <Link href="index.html">Home</Link>
           </li>
           <li>
-            <Link href="about.html">About</Link>
+            <Link href="/about">About</Link>
           </li>
           <li>
             <Link href="resume.html">Resume</Link>
