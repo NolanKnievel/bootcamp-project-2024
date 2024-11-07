@@ -1,4 +1,4 @@
-type Blog = {
+export interface Blog {
     title: string;
     date: string;
     description: string;
@@ -24,6 +24,7 @@ type Blog = {
       image: "../images/IMG_7633_2.jpg",
       imageAlt: "..",
       slug: "second-blog",
-    },
+    }
   ];
   
+  export default blogs;
