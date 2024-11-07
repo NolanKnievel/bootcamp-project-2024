@@ -12,6 +12,7 @@ export default function BlogPreview(props: Blog) {
       <div>
         <p>{props.description}</p>
         <p>{props.posted}</p>
+        <img src={props.image}/>
       </div>
     </div>
   );
