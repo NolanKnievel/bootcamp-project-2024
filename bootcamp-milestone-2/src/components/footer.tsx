@@ -4,9 +4,13 @@ import style from "./footer.module.css";
 export default function Footer() {
   return (
     <footer className={style.footer}>
-      <p>© 2023 Nolan's Website | All Rights Reserved</p>
+      <p>© 2024 Nolan's Website | All Rights Reserved</p>
       <br />
-      <img src="./meMidairTransparent.png" height="50px" />
+      <img
+        className={style.footerImage}
+        src="/images/meMidairTransparent.png"
+        alt="Footer Logo"
+      />
     </footer>
   );
 }
