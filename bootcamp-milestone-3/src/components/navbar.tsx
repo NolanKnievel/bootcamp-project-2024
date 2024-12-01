@@ -11,19 +11,19 @@ export default function Navbar() {
         </h1>
         <ul className={style.navList}>
           <li>
-            <Link href="index.html">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
             <Link href="/about">About</Link>
           </li>
           <li>
-            <Link href="resume.html">Resume</Link>
+            <Link href="/resume">Resume</Link>
           </li>
           <li>
-            <Link href="contact.html">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="blog.html">Blog</Link>
+            <Link href="/blog">Blog</Link>
           </li>
         </ul>
       </nav>
