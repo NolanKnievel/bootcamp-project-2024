@@ -1,9 +1,11 @@
 import BlogPreview from "@/components/blogPreview";
-import connectDB from "../database/database";
+import { connectBlogDB } from "../database/database";
 import Blog from "@/database/blogSchema";
 
 async function getBlogs() {
-  await connectDB();
+  const url: string = process.env.MONGO_URI as string;
+
+  await connectBlogDB();
 
   try {
     // query for all blogs and sort by date
