@@ -28,9 +28,11 @@ export default async function Home() {
       <div className="border-wrap">
         <h1 className="page-title">Portfolio</h1>
         <div id="portfolio-container">
-          {entries.map((entry) => (
-            <PortfolioEntryPreveiw {...entry} />
-          ))}
+          {entries != null ? (
+            entries.map((entry) => <PortfolioEntryPreview {...entry} />)
+          ) : (
+            <p>No portfolio entries available.</p>
+          )}
         </div>
       </div>
     </div>
