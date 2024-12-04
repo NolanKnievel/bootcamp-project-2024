@@ -1,14 +1,13 @@
 import BlogPreview from "@/components/blogPreview";
-import { connectBlogDB } from "../database/database";
+import connectDB  from "../database/database";
 import Blog from "@/database/blogSchema";
 
 async function getBlogs() {
   const url: string = process.env.MONGO_URI as string;
 
-  await connectBlogDB();
+  await connectDB();
 
   try {
-    // query for all blogs and sort by date
     const blogs = await Blog.find().sort({ date: -1 }).orFail();
 
     const formattedBlogs = blogs.map((blog) => ({
@@ -20,8 +19,6 @@ async function getBlogs() {
     }));
 
     return formattedBlogs;
-
-    return blogs;
   } catch (err) {
     return null;
   }
