@@ -6,14 +6,19 @@ type PortfolioEntry = {
   date: Date;
 };
 
-const portfolioEntrySchema = new Schema<PortfolioEntry>({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  date: { type: Date, required: false, default: new Date() },
-});
+const portfolioEntrySchema = new Schema<PortfolioEntry>(
+  {
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    date: { type: Date, required: false, default: new Date() },
+  },
+  {
+    collection: "portfolios", // Explicitly set the collection name
+  }
+);
 
 const PortfolioEntry =
-  mongoose.models["portfolioEntries"] ||
-  mongoose.model("portfolioEntries", portfolioEntrySchema);
+  mongoose.models["portfolios"] ||
+  mongoose.model("portfolios", portfolioEntrySchema);
 
 export default PortfolioEntry;
