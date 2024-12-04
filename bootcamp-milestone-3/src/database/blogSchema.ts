@@ -1,16 +1,14 @@
 import mongoose, { Schema } from "mongoose";
 
-// typescript type (can also be an interface)
 type Blog = {
   title: string;
   slug: string;
   date: Date;
-  description: string; // for preview
-  content: string; // for individual blog page
-  comments: IComment[]; // array for comments
+  description: string;
+  content: string;
+  comments: IComment[];
 };
 
-// mongoose schema
 const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
   slug: { type: String, required: true },
@@ -19,7 +17,7 @@ const blogSchema = new Schema<Blog>({
   content: { type: String, required: true },
 });
 
-// defining the collection and model
-const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
+const Blog = mongoose.models['blogs'] ||
+    mongoose.model('blogs', blogSchema);
 
 export default Blog;
