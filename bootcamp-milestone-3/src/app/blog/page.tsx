@@ -1,9 +1,9 @@
 import BlogPreview from "@/components/blogPreview";
-import { connectBlogDB } from "@/database/database";
+import connectDB from "@/database/database";
 import Blog from "@/database/blogSchema";
 
 async function getBlogs() {
-  const url: string = process.env.URI as string;
+  const url: string = process.env.MONGO_URI as string;
 
   await connectBlogDB();
   try {
@@ -24,7 +24,7 @@ async function getBlogs() {
 
 export default function Home() {
   const blogs = await getBlogs();
-  
+
   return (
     <div>
       <div className="border-wrap">
