@@ -1,22 +1,13 @@
 import mongoose from "mongoose";
 
-const blog_url: string = process.env.MONGO_URI as string;
-let blogConnection: typeof mongoose;
+const url: string = process.env.MONGO_URI as string;
+let connection: typeof mongoose;
 
-export const connectBlogDB = async () => {
-  if (!blogConnection) {
-    blogConnection = await mongoose.connect(blog_url);
-    return blogConnection;
+const connectDB = async () => {
+  if (!connection) {
+    connection = await mongoose.connect(url);
+    return connection;
   }
 };
 
-const portfolio_url: string = process.env.MONGO_URI as string;
-let portfolioConnection: typeof mongoose;
-
-export const connectPortfolioDB = async () => {
-  if (!portfolioConnection) {
-    portfolioConnection = await mongoose.connect(portfolio_url);
-    return portfolioConnection;
-  }
-};
-
+export default connectDB;
