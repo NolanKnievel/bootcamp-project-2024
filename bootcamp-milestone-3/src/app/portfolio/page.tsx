@@ -1,13 +1,16 @@
-import PortfolioEntryPreveiw from "@/components/portfolioEntryPreview";
-import { connectPortfolioDB } from "@/database/database";
+import PortfolioEntryPreview from "@/components/portfolioEntryPreview";
+import connectDB from "@/database/database";
 import PortfolioEntry from "@/database/portfolioEntrySchema";
 
 async function getPortfolioEntries() {
   const url: string = process.env.PORTFOLIO_URI as string;
 
-  await connectPortfolioDB();
+  await connectDB();
   try {
+    console.log(PortfolioEntry.collection.name);
     const entries = await PortfolioEntry.find().sort({ date: -1 }).orFail();
+    console.log(PortfolioEntry.collection.name);
+    console.log(entries);
 
     const formattedEntries = entries.map((entry) => ({
       title: entry.title,
@@ -17,6 +20,7 @@ async function getPortfolioEntries() {
 
     return formattedEntries;
   } catch (err) {
+    console.log(err);
     return null;
   }
 }
