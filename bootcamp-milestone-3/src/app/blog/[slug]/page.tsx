@@ -1,3 +1,5 @@
+import CommentComponent from "@/components/comment";
+
 type Props = {
   params: { slug: string };
 };
@@ -20,15 +22,30 @@ async function getBlog(slug: string) {
 }
 
 export default async function Blog({ params: { slug } }: Props) {
-  let blog = await getBlog(slug);
+  const blog = await getBlog(slug);
 
-  return (
-    <div>
-      <div className="border-wrap">
-        <h1 className="page-title">{blog.title}</h1>
-        <p>{blog.description}</p>
-        <p>{blog.date}</p>
+  if (blog) {
+    return (
+      <div>
+        <div className="border-wrap">
+          <h1 className="page-title">{blog.title}</h1>
+          <p>{blog.description}</p>
+          <p>{blog.date}</p>
+          <div>
+            {blog.comments.map((comment: Comment, index) => (
+              <CommentComponent key={index} comment={comment} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        <div className="border-wrap">
+          <h1 className="page-title">Blog Not Found :/</h1>
+        </div>
+      </div>
+    );
+  }
 }
