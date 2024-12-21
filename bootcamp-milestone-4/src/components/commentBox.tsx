@@ -12,7 +12,6 @@ export default function CommentBox({
   const [user, setUser] = useState("");
   const [comment, setComment] = useState("");
   const [message, setMessage] = useState<string | null>(null);
-  console.log(`route:${route}`);
 
   const handleSubmit = async () => {
     // check inputs
