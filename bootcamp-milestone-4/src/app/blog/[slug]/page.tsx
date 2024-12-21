@@ -37,7 +37,7 @@ export default async function Blog({ params: { slug } }: Props) {
             ))}
           </div>
           <div>
-            <CommentBox slug={slug} />
+            <CommentBox slug={slug} route="blog" />
           </div>
         </div>
       </div>

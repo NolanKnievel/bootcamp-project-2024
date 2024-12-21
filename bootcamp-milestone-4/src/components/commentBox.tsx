@@ -2,10 +2,17 @@
 
 import { useState } from "react";
 
-export default function CommentBox({ slug }: { slug: string }) {
+export default function CommentBox({
+  slug,
+  route,
+}: {
+  slug: string;
+  route: string;
+}) {
   const [user, setUser] = useState("");
   const [comment, setComment] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+  console.log(`route:${route}`);
 
   const handleSubmit = async () => {
     // check inputs
@@ -15,8 +22,15 @@ export default function CommentBox({ slug }: { slug: string }) {
     }
 
     try {
-        // POST to api endpoint
-      const response = await fetch(`/api/Blogs/${slug}/comments/`, {
+      // POST to api endpoint
+      let path = "";
+      if (route === "blog") {
+        path = `/api/Blogs/${slug}/comments/`;
+      } else {
+        path = `/api/Portfolios/${slug}/comments/`;
+      }
+
+      const response = await fetch(path, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,11 +42,12 @@ export default function CommentBox({ slug }: { slug: string }) {
         }),
       });
 
-      if (response.ok) {    // reset input boxes, reload page
+      if (response.ok) {
+        // reset input boxes, reload page
         setMessage("Comment added successfully!");
         setUser("");
         setComment("");
-        window.location.reload();   
+        window.location.reload();
       } else {
         const errorText = await response.text();
         setMessage(`Error: ${errorText}`);
