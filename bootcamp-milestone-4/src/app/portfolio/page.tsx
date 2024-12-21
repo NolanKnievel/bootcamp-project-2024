@@ -16,6 +16,7 @@ async function getPortfolioEntries() {
       title: entry.title,
       description: entry.description,
       date: entry.date.toString(),
+      slug: entry.slug,
     }));
 
     return formattedEntries;
