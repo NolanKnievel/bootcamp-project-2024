@@ -1,10 +1,13 @@
 import mongoose, { Schema } from "mongoose";
+import commentSchema from "./commentSchema";
+import { IComment } from "@/database/commentSchema";
 
 type PortfolioEntry = {
   title: string;
   description: string;
   date: Date;
   slug: String;
+  comments: IComment[];
 };
 
 const portfolioEntrySchema = new Schema<PortfolioEntry>(
@@ -13,6 +16,7 @@ const portfolioEntrySchema = new Schema<PortfolioEntry>(
     description: { type: String, required: true },
     date: { type: Date, required: false, default: new Date() },
     slug: { type: String, required: true },
+    comments: { type: [commentSchema], required: false, default: [] },
   },
   {
     collection: "portfolios", // Explicitly set the collection name

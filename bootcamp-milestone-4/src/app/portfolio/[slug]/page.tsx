@@ -1,5 +1,5 @@
-// import CommentComponent from "@/components/comment";
-// import CommentBox from "@/components/commentBox";
+import CommentComponent from "@/components/comment";
+import CommentBox from "@/components/commentBox";
 type Props = {
   params: { slug: string };
 };
@@ -31,14 +31,14 @@ export default async function Blog({ params: { slug } }: Props) {
           <h1 className="page-title">{portfolioEntry.title}</h1>
           <p>{portfolioEntry.description}</p>
           <p>{portfolioEntry.date}</p>
-          {/* <div>
+          <div>
             {portfolioEntry.comments.map((comment: Comment, index) => (
               <CommentComponent key={index} comment={comment} />
             ))}
           </div>
           <div>
             <CommentBox slug={slug} />
-          </div> */}
+          </div>
         </div>
       </div>
     );
