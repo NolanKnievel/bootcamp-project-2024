@@ -29,8 +29,20 @@ export default async function Blog({ params: { slug } }: Props) {
       <div>
         <div className="border-wrap">
           <h1 className="page-title">{blog.title}</h1>
-          <p>{blog.description}</p>
-          <p>{blog.date}</p>
+          <p
+            style={{ fontSize: "0.9rem", color: "#888", marginBottom: "16px" }}
+          >
+            {blog.date}
+          </p>
+
+          <p style={{ fontSize: "1.5rem", color: "#555", marginBottom: "8px" }}>
+            {blog.description}
+          </p>
+          <h2
+            style={{ fontSize: "1.5rem", color: "black", marginBottom: "8px" }}
+          >
+            Comments
+          </h2>
           <div>
             {blog.comments.map((comment: Comment, index) => (
               <CommentComponent key={index} comment={comment} />
