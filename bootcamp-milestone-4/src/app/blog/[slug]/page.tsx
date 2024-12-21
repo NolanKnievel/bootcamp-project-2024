@@ -36,7 +36,7 @@ export default async function Blog({ params: { slug } }: Props) {
           </p>
 
           <p style={{ fontSize: "1.5rem", color: "#555", marginBottom: "8px" }}>
-            {blog.description}
+            {blog.content}
           </p>
           <h2
             style={{ fontSize: "1.5rem", color: "black", marginBottom: "8px" }}
