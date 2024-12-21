@@ -18,17 +18,17 @@ export default function ContactForm() {
     }
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
+      // const response = await fetch("/api/contact", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ name, email, message }),
+      // });
 
       const EMAIL_JS_SERVICE_ID = "service_p8j5x0j";
       const EMAIL_JS_TEMPLATE_ID = "template_b7682mh";
       const EMAIL_JS_PUBLIC_KEY = "UdF-oso8jxuFTppKF";
 
-      emailjs.init({ publicKey: EMAIL_JS_PUBLIC_KEY });
+      emailjs.init(EMAIL_JS_PUBLIC_KEY);
 
       const templateParams = {
         to_name: "Nolan",
@@ -42,23 +42,25 @@ export default function ContactForm() {
         .then(
           (response) => {
             console.log("Email sent successfully:", response);
+            setStatus("Message sent successfully!");
           },
           (error) => {
             console.error("Failed to send email:", error);
+            setStatus("Failed to send message.");
           }
         );
 
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setName("");
-        setEmail("");
-        setMessage("");
-      } else {
-        setStatus("Failed to send message. Please try again.");
-      }
+      // if (response.ok) {
+      //   setStatus("Message sent successfully!");
+      //   setName("");
+      //   setEmail("");
+      //   setMessage("");
+      // } else {
+      //   setStatus("Failed to send message. Please try again.");
+      // }
     } catch (error) {
       console.error(error);
-      setStatus("An error occurred. Please try again.");
+      setStatus(`An error occurred. Please try again. ${error}`);
     }
   };
 
