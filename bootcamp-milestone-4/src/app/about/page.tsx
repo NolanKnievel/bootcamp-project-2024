@@ -9,9 +9,9 @@ export default function Home() {
           </div>
 
           <div className="about-text">
-            <h2>Hey! I'm Nolan Knievel</h2>
+            <h2>Hey! I am Nolan Knievel</h2>
             <p>
-              I'm from Seattle, WA and am currently a second year computer
+              I am from Seattle, WA and am currently a second year computer
               science student at Cal Poly San Luis Obispo. <br></br>
               School keeps me busy, but outside of the classroom I love to swim,
               work out, run, camp, and play piano.
