@@ -14,6 +14,7 @@ async function getBlogs() {
       description: blog.description,
       slug: blog.slug,
       date: blog.date.toString(),
+      comments: blog.comments,
     }));
 
     return formattedBlogs;
@@ -30,9 +31,9 @@ export default async function Home() {
       <div className="border-wrap">
         <h1 className="page-title">Blog</h1>
         <div id="blog-container">
-          {blogs.map((blog) => (
-            <BlogPreview key={blog.slug} {...blog} />
-          ))}
+          {blogs?.map((blog) => <BlogPreview key={blog.slug} {...blog} />) || (
+            <p>No blogs available.</p>
+          )}
         </div>
       </div>
     </div>
