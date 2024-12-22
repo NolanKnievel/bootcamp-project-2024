@@ -3,10 +3,10 @@ import commentSchema from "./commentSchema";
 import { IComment } from "@/database/commentSchema";
 
 type PortfolioEntry = {
-  title: String;
-  description: String;
+  title: string;
+  description: string;
   date: Date;
-  slug: String;
+  slug: string;
   comments: IComment[];
 };
 
