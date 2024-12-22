@@ -51,7 +51,7 @@ export default function CommentBox({
         const errorText = await response.text();
         setMessage(`Error: ${errorText}`);
       }
-    } catch (error) {
+    } catch {
       setMessage("An unexpected error occurred.");
     }
   };
