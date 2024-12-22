@@ -31,7 +31,7 @@ export default async function Home() {
         <h1 className="page-title">Blog</h1>
         <div id="blog-container">
           {blogs.map((blog) => (
-            <BlogPreview {...blog} />
+            <BlogPreview key={blog.slug} {...blog} />
           ))}
         </div>
       </div>
