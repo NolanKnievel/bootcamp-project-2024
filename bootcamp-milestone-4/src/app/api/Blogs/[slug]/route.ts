@@ -4,7 +4,7 @@ import blogSchema from "@/database/blogSchema";
 
 type IParams = {
   params: {
-    slug: slug;
+    slug: string;
   };
 };
 

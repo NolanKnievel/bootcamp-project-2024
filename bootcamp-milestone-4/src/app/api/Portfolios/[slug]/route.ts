@@ -4,7 +4,7 @@ import portfolioEntrySchema from "@/database/portfolioEntrySchema";
 
 type IParams = {
   params: {
-    slug: slug;
+    slug: string;
   };
 };
 
