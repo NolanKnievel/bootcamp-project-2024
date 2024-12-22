@@ -10,7 +10,7 @@ export default function PortfolioEntryPreview(props: PortfolioEntry) {
         <h3> {props.title} </h3>
         <div>
           <p>{props.description}</p>
-          <p>{props.date}</p>
+          <p>{props.date.toDateString()}</p>
         </div>
       </div>
     </Link>
