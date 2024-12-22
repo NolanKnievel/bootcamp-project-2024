@@ -3,8 +3,6 @@ import connectDB from "@/database/database";
 import PortfolioEntry from "@/database/portfolioEntrySchema";
 
 async function getPortfolioEntries() {
-  const url: string = process.env.PORTFOLIO_URI as string;
-
   await connectDB();
   try {
     console.log(PortfolioEntry.collection.name);
@@ -34,7 +32,9 @@ export default async function Home() {
         <h1 className="page-title">Portfolio</h1>
         <div id="portfolio-container">
           {entries != null ? (
-            entries.map((entry) => <PortfolioEntryPreview {...entry} />)
+            entries.map((entry) => (
+              <PortfolioEntryPreview key={entry.slug} {...entry} />
+            ))
           ) : (
             <p>No portfolio entries available.</p>
           )}
