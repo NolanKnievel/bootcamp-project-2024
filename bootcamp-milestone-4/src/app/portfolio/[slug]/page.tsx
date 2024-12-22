@@ -45,8 +45,8 @@ export default async function Blog({ params: { slug } }: Props) {
           </h2>
 
           <div>
-            {portfolioEntry.comments.map((comment: Comment, index) => (
-              <CommentComponent key={index} comment={comment} />
+            {portfolioEntry.comments.map((comment: Comment, index: int) => (
+              <CommentComponent key={index} comment = {comment} />
             ))}
           </div>
           <div>

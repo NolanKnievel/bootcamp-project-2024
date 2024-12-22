@@ -6,7 +6,7 @@ export type IComment = {
   time: Date;
 };
 
-const commentSchema = new Schema<Comment>({
+const commentSchema = new Schema<IComment>({
   user: { type: String, required: true },
   comment: { type: String, required: true },
   time: { type: Date, required: true },
