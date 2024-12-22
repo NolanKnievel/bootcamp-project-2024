@@ -1,5 +1,6 @@
 import CommentComponent from "@/components/comment";
 import CommentBox from "@/components/commentBox";
+import { IComment } from "@/database/commentSchema";
 type Props = {
   params: { slug: string };
 };
@@ -45,8 +46,8 @@ export default async function Blog({ params: { slug } }: Props) {
           </h2>
 
           <div>
-            {portfolioEntry.comments.map((comment: Comment, index: int) => (
-              <CommentComponent key={index} comment = {comment} />
+            {portfolioEntry.comments.map((comment: IComment, index: number) => (
+              <CommentComponent key={index} comment={comment} />
             ))}
           </div>
           <div>
