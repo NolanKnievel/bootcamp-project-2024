@@ -33,7 +33,7 @@ export default async function Blog({ params: { slug } }: Props) {
           <p
             style={{ fontSize: "0.9rem", color: "#888", marginBottom: "16px" }}
           >
-            {portfolioEntry.date}
+            {portfolioEntry.date.toString()}
           </p>
 
           <p style={{ fontSize: "1.5rem", color: "#555", marginBottom: "8px" }}>

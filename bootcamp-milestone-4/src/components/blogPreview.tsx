@@ -10,7 +10,7 @@ export default function BlogPreview(props: Blog) {
         <h3> {props.title} </h3>
         <div>
           <p>{props.description}</p>
-          <p>{props.date.toDateString()}</p>
+          <p>{props.date.toString()}</p>
         </div>
       </div>
     </Link>
