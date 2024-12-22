@@ -3,8 +3,6 @@ import connectDB from "@/database/database";
 import Blog from "@/database/blogSchema";
 
 async function getBlogs() {
-  const url: string = process.env.MONGO_URI as string;
-
   await connectDB();
 
   try {
@@ -19,7 +17,7 @@ async function getBlogs() {
     }));
 
     return formattedBlogs;
-  } catch (err) {
+  } catch {
     return null;
   }
 }

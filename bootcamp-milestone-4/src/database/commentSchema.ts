@@ -13,3 +13,4 @@ const commentSchema = new Schema<Comment>({
   });
   
 
+export default commentSchema;

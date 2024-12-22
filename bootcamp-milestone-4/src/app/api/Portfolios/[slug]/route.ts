@@ -17,7 +17,7 @@ export async function GET(req: NextRequest, { params }: IParams) {
       .findOne({ slug })
       .orFail();
     return NextResponse.json(portfolioEntry);
-  } catch (err) {
+  } catch {
     return NextResponse.json("Blog not found.", { status: 404 });
   }
 }
