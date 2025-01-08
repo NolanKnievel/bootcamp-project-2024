@@ -7,9 +7,12 @@ type Props = {
 
 async function getPortfolioEntry(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/Portfolios/${slug}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://bootcamp-project-2024-eta.vercel.app/api/Portfolios/${slug}`,
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch portfolio");
